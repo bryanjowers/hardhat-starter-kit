@@ -27,7 +27,7 @@ if (!ChainlinkSupply.error) {
 
     // Get on-chain LINK balance for selected wallet via Alchemy
     const balanceCheck = await OCR2DR.makeHttpRequest({
-        url: `https://eth-mainnet.g.alchemy.com/v2/_H1NxoXMxuq8VDor4T_DN2napwNnk0-j`,
+        url: `https://eth-mainnet.g.alchemy.com/v2/${secrets.ALCHEMY_KEY}`,
         method: 'POST',
         headers: { accept: 'application/json', 'content-type': 'application/json' },
         data: {
@@ -37,7 +37,7 @@ if (!ChainlinkSupply.error) {
             params: [ChainlinkSupply.data.balances[randomAddressPicker].address, ['0x514910771af9ca656af840dff83e8264ecf986ca']] // dynamically query wallet, filtering for only LINK contract
         }
     });
-
+    console.log(balanceCheck)
     if (!balanceCheck.error) {
         
         // Parse Alchemy API response which returns filtered LINK token balance for selected address
