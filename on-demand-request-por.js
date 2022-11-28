@@ -5,7 +5,7 @@
 // Each time this application is invoked, we randomly select 1 wallet from the list
 // We then verify that the funds on-chain match the off-chain reported amount by Chainlink Foundation
 // We expect each time we run this check that the funds on-chain should match the API off-chain amount
-// More Info on LINK circulation: https://supply.chain.link
+// More info on LINK circulation: https://supply.chain.link
 //
 
 let isPoRValid;
